@@ -43,7 +43,7 @@ module.exports = async (app, connection) => {
 
 
   Promise.all([candidato, candidata, curso])
-    .then((res) => console.log(`Tabelas criadas com successo!`))
+    .then((res) => console.log(`+ TABELAS CRIADAS COM SUCESSO!`))
     .catch(err => console.log(`Erro: ${err.message}`))
 
 }

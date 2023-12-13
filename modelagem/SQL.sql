@@ -1,9 +1,9 @@
 /* Lógico: */
 
 CREATE TABLE candidato (
-    id INTEGER PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(150),
-    genero ENUM("M", "F"),
+    genero ENUM("M", "F") DEFAULT "M",
     data_nascimento DATE,
     bi VARCHAR(45) UNIQUE,
     data_emisao_bi DATE,
@@ -12,26 +12,26 @@ CREATE TABLE candidato (
     media_medio FLOAT(2,2),
     curso_medio VARCHAR(150),
     escola_medio VARCHAR(150),
-    ano_termino_medio INTEGER,
+    ano_termino_medio INT,
     URL_certificado TEXT
 );
 
 CREATE TABLE curso (
-    id INTEGER PRIMARY KEY,
+    id INT PRIMARY KEY,
     descricao TEXT UNIQUE,
-    anos INTEGER,
-    total_cadeira INTEGER,
-    quantidade_vagas INTEGER
+    anos INT,
+    total_cadeira INT,
+    quantidade_vagas INT
 );
 
 CREATE TABLE candidata (
-    candidato_id INTEGER NOT NULL,
-    curso_id INTEGER NOT NULL,
-    id INTEGER PRIMARY KEY,
+    candidato_id INT NOT NULL,
+    curso_id INT NOT NULL,
+    id INT PRIMARY KEY,
     data DATE,
-    ano_letivo INTEGER,
-    estado INTEGER,
-    nota INTEGER
+    ano_letivo INT,
+    estado INT,
+    nota INT
 );
  
 ALTER TABLE candidata ADD CONSTRAINT FK_candidata_2
